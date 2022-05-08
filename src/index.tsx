@@ -1,15 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CashFlow from "./components/CashFlow/CashFlow";
+import BalanceSheet from "./components/BalanceSheet/BalanceSheet";
+import Account from "./components/CashFlow/CashFlow";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="balance-sheet" element={<BalanceSheet />} />
+          <Route path="cash-flow" element={<CashFlow />}>
+            <Route path=":accountId" element={<Account />} />
+          </Route>
+          <Route
+            path="*"
+            element={
+              <main>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

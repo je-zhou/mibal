@@ -1,14 +1,20 @@
 import { Link, Outlet } from "react-router-dom";
+import getData from "../../dummyData";
 
 export default function CashFlow() {
+  let data = getData();
+  console.log(data);
+  let accounts = data.map((obj) => (
+    <Link to={`/cash-flow/${obj.accountName}`} key={obj.accountName}>
+      {" | "}
+      {obj.accountName}
+    </Link>
+  ));
+
   return (
-    <div style={{ display: "flex" }}>
-      <nav>
-        <Link to={`/cash-flow/account`} key={0}>
-          Account
-        </Link>
-      </nav>
-      <Outlet></Outlet>
+    <div>
+      <nav>{accounts}</nav>
+      <Outlet />
     </div>
   );
 }

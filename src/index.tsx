@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CashFlow from "./components/CashFlow/CashFlow";
 import BalanceSheet from "./components/BalanceSheet/BalanceSheet";
-import Account from "./components/CashFlow/CashFlow";
+import Account from "./components/CashFlow/Account";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -19,7 +19,7 @@ root.render(
         <Route path="/" element={<App />}>
           <Route path="balance-sheet" element={<BalanceSheet />} />
           <Route path="cash-flow" element={<CashFlow />}>
-            <Route path=":accountId" element={<Account />} />
+            <Route path=":accountName" element={<Account />} />
           </Route>
           <Route
             path="*"

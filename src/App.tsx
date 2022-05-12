@@ -1,23 +1,25 @@
-import "./App.css";
-import { Link, Outlet, useLocation } from "react-router-dom";
-
-export const LocationDisplay = () => {
-  const location = useLocation();
-
-  return <div data-testid="location-display">{location.pathname}</div>;
-};
-
-function App() {
-  return (
-    <div className="wrapper">
-      <h1>Title</h1>
-      <nav>
-        <Link to="/balance-sheet">Balance Sheet</Link> |{" "}
-        <Link to="/cash-flow">Cash Flow</Link>
-        <Outlet />
-      </nav>
-    </div>
-  );
-}
-
-export default App;
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CashFlow from "./components/CashFlow/CashFlow";
+import BalanceSheet from "./components/BalanceSheet/BalanceSheet";
+import Wrapper from "./components/Wrapper";
+  
+function App(){
+return (<BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Wrapper/>}>
+        <Route path="balance-sheet" element={<BalanceSheet />} />
+        <Route path="cash-flow" element={<CashFlow />} />
+        <Route
+          path="*"
+          element={
+            <main>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Route>
+    </Routes>
+  </BrowserRouter>)
+  }
+export default App
+  

@@ -1,4 +1,4 @@
-export default interface IBank{
-
+export default interface IBank {
+    id?: string
+    name: string
 }
-  

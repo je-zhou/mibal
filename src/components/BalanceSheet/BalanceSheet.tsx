@@ -1,3 +1,3 @@
-export default function React() {
+export default function BalanceSheet() {
   return <h2>Balance Sheet</h2>;
 }

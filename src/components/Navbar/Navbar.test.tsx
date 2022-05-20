@@ -29,9 +29,8 @@ test("Balance Sheet button navigates correctly", async () => {
       <Navbar />
     </Router>
   );
-  const user = userEvent.setup();
 
-  await user.click(screen.getByText("Balance Sheet"));
+  await userEvent.click(screen.getByText("Balance Sheet"));
 
   expect(history.location.pathname).toBe("/balance-sheet");
 });
@@ -44,9 +43,8 @@ test("Cash Flow button navigates correctly", async () => {
       <Navbar />
     </Router>
   );
-  const user = userEvent.setup();
 
-  await user.click(screen.getByText("Cash Flow"));
+  await userEvent.click(screen.getByText("Cash Flow"));
 
   expect(history.location.pathname).toBe("/cash-flow");
 });

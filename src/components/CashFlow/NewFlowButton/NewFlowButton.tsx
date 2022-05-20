@@ -1,7 +1,13 @@
-export default function NewFlowButton() {
+import { mockFlow } from "../../../mock_data/mock_data";
+
+interface NewFlowButtonProps {
+  handleClick: Function;
+}
+
+export default function NewFlowButton({ handleClick }: NewFlowButtonProps) {
   return (
     <div>
-      <button>New Flow</button>
+      <button onClick={() => handleClick()}>New Flow</button>
     </div>
   );
 }

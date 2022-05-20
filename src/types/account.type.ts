@@ -1,7 +1,7 @@
 import IFlow from "./flow.type";
 
 export default interface IAccount {
-    flows: Array<IFlow>
-    getBalance(dateFrom?: Date | null): number, 
-  }
-  
+  name: string,
+  flows: Array<IFlow>
+  getBalance(dateFrom?: Date | null): number,
+}

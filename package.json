@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@syncfusion/ej2": "^19.4.48",
+    "@syncfusion/ej2-react-charts": "^19.4.50",
+    "@syncfusion/ej2-react-dropdowns": "^19.4.52",
+    "@syncfusion/ej2-react-grids": "^19.4.50",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/user-event": "^14.1.1",
     "@types/jest": "^27.5.0",
     "@types/node": "^17.0.31",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
+    "firebase": "^9.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
@@ -41,6 +46,9 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^13.2.0"
+    "@testing-library/react": "^13.2.0",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.24"
   }
 }

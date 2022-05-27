@@ -15,7 +15,7 @@ export default function RegisterPage() {
     };
     useEffect(() => {
         if (loading) return;
-        if (user) navigate("/dashboard");
+        if (user) navigate("/");
     }, [user, loading, navigate]);
     return (
         <div className="register">
@@ -51,7 +51,7 @@ export default function RegisterPage() {
                     Register with Google
                 </button>
                 <div>
-                    Already have an account? <Link to="/">Login</Link> now.
+                    Already have an account? <Link to="/login">Login</Link> now.
                 </div>
             </div>
         </div>

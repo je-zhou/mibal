@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CashFlow from "./components/CashFlow/CashFlow";
-import BalanceSheet from "./components/BalanceSheet/BalanceSheet";
+import CashFlow from "./pages/CashFlow/CashFlow";
+import BalanceSheet from "./pages/BalanceSheet/BalanceSheet";
 import Wrapper from "./components/Wrapper";
 
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBmnlgNRMPXub8N6sqUDCOJh5OalHY5g1U",
@@ -19,7 +18,6 @@ const firebaseConfig = {
 
 function App(){
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 return (<BrowserRouter>
     <Routes>

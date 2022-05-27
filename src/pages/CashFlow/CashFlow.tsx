@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { mockAccount, mockFlow } from "../../mock_data/mock_data";
 import IFlow from "../../types/flow.type";
-import AddTransactionButton from "./AddTransactionButton/AddTransactionButton";
-import CashFlowTable from "./CashFlowTable/CashFlowTable";
-import NewFlowButton from "./NewFlowButton/NewFlowButton";
+import AddTransactionButton from "../../components/CashFlow/AddTransactionButton/AddTransactionButton";
+import NewFlowButton from "../../components/CashFlow/NewFlowButton/NewFlowButton";
+import CashFlowTable from "../../components/CashFlow/CashFlowTable/CashFlowTable";
+
 
 export default function CashFlow() {
   let [accountData, setaccountData] = useState(mockAccount)

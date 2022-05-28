@@ -16,7 +16,7 @@ export default function LoginPage() {
         if (user) navigate("/cash-flow");
     }, [user, loading, navigate]);
     return (
-        <div className="login">
+        <div className="100vh 100vw">
             <div className="login__container">
                 <input
                     type="text"

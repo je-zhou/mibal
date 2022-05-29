@@ -10,7 +10,7 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 
 const SideBar = () => {
-    const { activeMenu } = useStateContext()
+    const { activeMenu, toggleMenu } = useStateContext()
 
     const links: LinkMenu[] = [{
         title: 'Finances',
@@ -26,7 +26,7 @@ const SideBar = () => {
 
     const handleCloseSideBar = () => {
         if (activeMenu !== undefined) {
-            // setActiveMenu(false);
+            toggleMenu!()
         }
     };
 
@@ -41,11 +41,11 @@ const SideBar = () => {
             {activeMenu && (
                 <>
                     <div className='flex justify-between items-center'>
-                        <Link to="/" onClick={() => { }} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold traacking-tight dark:text-white text-slate-900" >
+                        <Link to="/" onClick={toggleMenu} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold traacking-tight dark:text-white text-slate-900" >
                             <span>Mibal</span>
                         </Link>
                         <TooltipComponent content="Menu" position='BottomCenter'>
-                            <button type="button" onClick={() => { }} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
+                            <button type="button" onClick={toggleMenu} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
                                 <AiOutlineClose />
                             </button>
                         </TooltipComponent>

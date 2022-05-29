@@ -1,22 +1,30 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, FC, ReactNode, useContext, useState } from 'react'
 
-
-const initialState = {
-    activeMenu: false
-    setActiveMenu: 
+interface IStateContext {
+    activeMenu: boolean;
+    toggleMenu: () => void;
 }
 
-const StateContext = createContext(initialState);
+type StateContextProps = {
+    children?: ReactNode
+};
 
+const initialState = {
+    activeMenu: false,
+    toggleMenu: () => console.log('Toggle Menu function not passed')
+}
 
-export const ContextProvider = (children: any) => {
+const StateContext = createContext<IStateContext>(initialState);
+
+export default function ContextProvider({ children }: StateContextProps) {
     const [activeMenu, setActiveMenu] = useState(true)
 
-    return (
-        <StateContext.Provider value={{ activeMenu, setActiveMenu }}>
-            {children}
-        </ StateContext.Provider>
-    )
+    const toggleMenu = () => {
+        setActiveMenu((prev) => !prev);
+    };
+
+    return <StateContext.Provider value={{ activeMenu, toggleMenu }}>{children}</ StateContext.Provider>
+
 }
 
 export const useStateContext = () => useContext(StateContext);

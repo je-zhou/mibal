@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import BalanceSheetPage from './pages/balance-sheet/BalanceSheetPage';
+import CashFlowPage from './pages/cash-flow/CashFlowPage';
+import MainPage from './pages/main/MainPage';
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div >
+      <Navbar />
+      <div >
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/balance-sheet" element={<BalanceSheetPage />} />
+          <Route path="/cash-flow" element={<CashFlowPage />} />
+        </Routes>
+      </div>
+    </div >
   );
 }
 
